@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading</title>
+  </head>
+  <body>
+    <h1 id="status">Loading, please wait...</h1>
+    <script>
+      (async () => {
+        let params = new URLSearchParams(location.search);
+        let json = await fetch(
+          `https://api.github.com/repos/${params.get("repo")}/releases`
+        );
+        json = await json.json();
+        console.log(json);
+        json = json[0].assets;
+        json = json.filter((a) => {
+          return a.name
+            .toLowerCase()
+            .includes(params.get("search").toLowerCase());
+        })[0].browser_download_url;
+        console.log(json);
+        document.querySelector("title").textContent = "Done";
+        document.querySelector("#status").textContent =
+          "You can safely close this tab/window.";
+        setTimeout(() => (location = json), 10);
+      })();
+    </script>
+  </body>
+</html>
