@@ -1,9 +1,9 @@
 # rl
-Releaselink - make 1 click links to github release download urls. Made because basilisk can't open github releases.
+Releaselink - Make 1-click links to GitHub release download URLs. Made because Basilisk can't open GitHub Releases.
 
 ## Example
 
 Download bluescreen simulator
 ```
-https://0xc4ae1e5.github.io/rl/?repo=flytechvideos/bluescreensimulator&search=bluescreensimulator.exe
+rl?repo=flytechvideos/bluescreensimulator&search=bluescreensimulator.exe
 ```
