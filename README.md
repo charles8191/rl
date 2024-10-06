@@ -3,7 +3,7 @@ Releaselink - Make 1-click links to GitHub release download URLs. Made because B
 
 ## Example
 
-Download bluescreen simulator
+Download BluescreenSimulator
 ```
 rl?repo=flytechvideos/bluescreensimulator&search=bluescreensimulator.exe
 ```
